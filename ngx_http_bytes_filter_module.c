@@ -274,6 +274,10 @@ ngx_http_bytes_header_filter(ngx_http_request_t *r)
     }
 
 done:
+	// return with status 206 partial content for MPEG-DASH support
+	// ToDo: add a flag for change between normal return (200) or partial (206)
+    r->headers_out.status = NGX_HTTP_PARTIAL_CONTENT;
+    r->headers_out.status_line.len = 0;
     r->headers_out.content_length_n = len;
 
     if (r->headers_out.content_length) {
