@@ -1,5 +1,7 @@
 Bytes module for nginx.
 
+*Update:* change response header from *200 OK* to *206 partial content*.
+
 This module was designed to allow easy access to range of file data.  It
 searches request arguments for 'bytes=...' and return requested range.  All
 requested data is returned concatinated in single reply, with apropriate
