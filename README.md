@@ -1,6 +1,6 @@
 Bytes module for nginx.
 
-*Update:* change response header from *200 OK* to *206 partial content*.
+**Update:** change response header from *200 OK* to *206 partial content*.
 
 This module was designed to allow easy access to range of file data.  It
 searches request arguments for 'bytes=...' and return requested range.  All
@@ -28,3 +28,7 @@ Argument bytes= must contain range specification as defined in RFC 2616,
 
 To compile nginx with bytes module, use "--add-module <path>" option to nginx
 configure.
+
+**ToDo**
+
+* Create flag to switch between 200 and 206 status code.
